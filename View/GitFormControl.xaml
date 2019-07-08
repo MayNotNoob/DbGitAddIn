@@ -1,0 +1,194 @@
+﻿<UserControl x:Class="DbGitAddIn.GitFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:DbGitAddIn.ViewModel"
+             xmlns:src="http://schemas.microsoft.com/build/2009/properties"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             Background="{DynamicResource VsBrush.Window}"
+             Foreground="{DynamicResource VsBrush.WindowText}"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="MyToolWindow" Padding="2px">
+    <UserControl.Resources>
+        <viewModel:GitViewModel x:Key="GitViewModel"></viewModel:GitViewModel>
+    </UserControl.Resources>
+    <TabControl  x:Name="TabControl" DataContext="{StaticResource GitViewModel}">
+        <TabItem Header="Explorer">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="93*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Menu Grid.Row="0" Grid.ColumnSpan="2">
+                    <MenuItem Header="Folder" Command="{Binding OpenFolder}"></MenuItem>
+                    <MenuItem Header="Reload" Command="{Binding Reload}"></MenuItem>
+                </Menu>
+                <TreeView BorderThickness="0" Grid.Row="1" x:Name="TreeView" ItemsSource="{Binding Folders}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
+                    <TreeView.Resources>
+                        <!--Folder-->
+                        <HierarchicalDataTemplate DataType="{x:Type viewModel:Folder}" ItemsSource="{Binding Path=Children}">
+                            <Grid>
+                                <TextBlock Text="{Binding Name}" Tag="{Binding Path}"
+                                           MouseLeftButtonDown="OnDoubleClick"
+                                           MouseRightButtonUp="OnMouseRightButtonUp"
+                                           PreviewMouseRightButtonDown="OnPreviewMouseRightButtonDown"
+                                           >
+                                    <TextBlock.ContextMenu>
+                                        <ContextMenu>
+                                            <!--<MenuItem Header="Copy" Command="{Binding Source={StaticResource GitViewModel},Path=CopyFile}"
+                                                      CommandParameter="{Binding RelativeSource={RelativeSource Self}}"></MenuItem>-->
+                                            <MenuItem Header="Rename" Click="OnRenameClick"></MenuItem>
+                                            <MenuItem Header="New">
+                                                <MenuItem Header="New File" Command="{Binding Source={StaticResource GitViewModel}, Path=NewFile}"
+                                                          CommandParameter="{Binding RelativeSource={RelativeSource Self}}"></MenuItem>
+                                                <MenuItem Header="New Folder" Command="{Binding Source={StaticResource GitViewModel}, Path=NewFile}"
+                                                          CommandParameter="{Binding RelativeSource={RelativeSource Self}}"></MenuItem>
+                                            </MenuItem>
+                                            <MenuItem Header="Paste" 
+                                                      IsEnabled="{Binding Source={StaticResource GitViewModel}, Path=PasteEnbaled}"
+                                                      Command="{Binding Source={StaticResource GitViewModel}, Path=PasteFile}"
+                                                      CommandParameter="{Binding RelativeSource={RelativeSource Self}}"></MenuItem>
+                                        </ContextMenu>
+                                    </TextBlock.ContextMenu>
+                                </TextBlock>
+                                <TextBox Text="{Binding Name}" Visibility="Hidden" Padding="-2,0,-2,0">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="LostFocus">
+                                            <i:InvokeCommandAction Command="{Binding Source={StaticResource GitViewModel},Path=LostFocus}"
+                                                                   CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TextBox},Mode=FindAncestor}}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TextBox>
+                            </Grid>
+                        </HierarchicalDataTemplate>
+                        <!--End Folder-->
+                        <!--File-->
+                        <HierarchicalDataTemplate DataType="{x:Type viewModel:Fichier}">
+                            <Grid>
+                                <TextBlock Text="{Binding Name}" 
+                                           Tag="{Binding Path}"
+                                           PreviewMouseRightButtonDown="OnPreviewMouseRightButtonDown"
+                                           MouseRightButtonUp="OnMouseRightButtonUp"
+                                           MouseLeftButtonDown="OnDoubleClick">
+                                    <TextBlock.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Copy" Command="{Binding Source={StaticResource GitViewModel},Path=CopyFile}"
+                                                      CommandParameter="{Binding RelativeSource={RelativeSource Self}}"></MenuItem>
+                                            <MenuItem Header="Rename" Click="OnRenameClick"></MenuItem>
+                                            <MenuItem Header="Delete" Command="{Binding Source={StaticResource GitViewModel},Path=DeleteFile}"
+                                                      CommandParameter="{Binding RelativeSource={RelativeSource Self}}"></MenuItem>
+                                        </ContextMenu>
+                                    </TextBlock.ContextMenu>
+                                </TextBlock>
+                                <TextBox Text="{Binding Name}"  Visibility="Hidden" Padding="-2,0,-2,0">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="LostFocus">
+                                            <i:InvokeCommandAction Command="{Binding Source={StaticResource GitViewModel},Path=LostFocus}"
+                                                                   CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TextBox},Mode=FindAncestor}}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TextBox>
+                            </Grid>
+                        </HierarchicalDataTemplate>
+                        <!--End File-->
+                    </TreeView.Resources>
+                </TreeView>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Team Explorer" IsSelected="{Binding TabItemSelected,Mode=TwoWay }">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Menu Grid.Row="0" Grid.ColumnSpan="2">
+                    <MenuItem Header="Clone"></MenuItem>
+                    <MenuItem Header="Branches" ItemsSource="{Binding Branches}">
+                        <MenuItem.ItemTemplate>
+                            <HierarchicalDataTemplate >
+                                <TextBlock Text="{Binding}">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                                            <i:InvokeCommandAction Command="{Binding Source={StaticResource GitViewModel},Path=Checkout}"
+                                                                   CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TextBlock},Mode=FindAncestor},Path=Text}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TextBlock>
+                            </HierarchicalDataTemplate>
+                        </MenuItem.ItemTemplate>
+                    </MenuItem>
+                    <MenuItem Header="Commands" >
+                        <MenuItem Header="Pull" Command="{Binding Pull}"></MenuItem>
+                        <MenuItem Header="Stage" Command="{Binding Stage}"></MenuItem>
+                        <MenuItem Header="Merge From" ItemsSource="{Binding LocalBranches}">
+                            <MenuItem.ItemTemplate>
+                                <HierarchicalDataTemplate >
+                                    <TextBlock Text="{Binding}">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonUp">
+                                                <i:InvokeCommandAction Command="{Binding Source={StaticResource GitViewModel},Path=Merge}"
+                                                                       CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TextBlock},Mode=FindAncestor},Path=Text}"/>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </TextBlock>
+                                </HierarchicalDataTemplate>
+                            </MenuItem.ItemTemplate>
+                        </MenuItem>
+                        <MenuItem Header="Revert" Command="{Binding Revert}"></MenuItem>
+                        <MenuItem Header="New Branch" Command="{Binding CreateBranch}"></MenuItem>
+                        <MenuItem Header="Console" Command="{Binding Console}"></MenuItem>
+                    </MenuItem>
+                </Menu>
+                <TextBox Grid.Row="1" Height="80" TextWrapping="Wrap" Text="{Binding Mode=TwoWay,Path=CommitMsg}" Grid.ColumnSpan="2"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <ComboBox x:Name="ComboBox" Width="100" HorizontalAlignment="Left" SelectedValue="{Binding CommitMode, Mode=TwoWay}">
+                        <ComboBoxItem Content="Commit"></ComboBoxItem>
+                        <ComboBoxItem Content="Commit and push"></ComboBoxItem>
+                        <ComboBoxItem Content="Commit and sync"></ComboBoxItem>
+                    </ComboBox>
+                    <Button Content="  OK  "  IsEnabled="{Binding BtnEnabled}" Command="{Binding Commit}"></Button>
+                    <TextBlock Text="{Binding Comment, Mode=TwoWay}"></TextBlock>
+                </StackPanel>
+                <TextBlock Grid.Row="3" Text=" Changes" FontWeight="Bold" Grid.ColumnSpan="2" ></TextBlock>
+                <TreeView Grid.Row="4" VerticalAlignment="Stretch" BorderThickness="0" ItemsSource="{Binding Changes}" Grid.ColumnSpan="2">
+                    <TreeView.Resources>
+                        <!--Folder-->
+                        <HierarchicalDataTemplate DataType="{x:Type viewModel:Folder}" ItemsSource="{Binding Path=Children}">
+                            <Grid>
+                                <TextBlock Text="{Binding Name}"
+                                           PreviewMouseRightButtonDown="OnPreviewMouseRightButtonDown">
+                                </TextBlock>
+                            </Grid>
+                        </HierarchicalDataTemplate>
+                        <!--End Folder-->
+                        <!--File-->
+                        <HierarchicalDataTemplate DataType="{x:Type viewModel:Fichier}">
+                            <Grid>
+                                <TextBlock Text="{Binding Name}" 
+                                           Tag="{Binding Path}"
+                                           MouseLeftButtonDown="OnDoubleClick"
+                                           PreviewMouseRightButtonDown="OnPreviewMouseRightButtonDown">
+                                </TextBlock>
+                            </Grid>
+                        </HierarchicalDataTemplate>
+                        <!--End File-->
+                    </TreeView.Resources>
+                </TreeView>
+            </Grid>
+        </TabItem>
+    </TabControl>
+
+</UserControl>

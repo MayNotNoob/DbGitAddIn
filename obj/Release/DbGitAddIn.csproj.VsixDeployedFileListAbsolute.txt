@@ -1,0 +1,42 @@
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\DbGitAddIn.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\DbGitAddIn.pdb
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\LibGit2Sharp.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.PowerShell.Commands.Management.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.PowerShell.Commands.Utility.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.PowerShell.ConsoleHost.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.PowerShell.Security.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.SqlServer.Management.Sdk.SqlStudio.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.SqlServer.Management.SqlStudio.Explorer.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.SqlServer.Smo.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Microsoft.SqlServer.SqlTools.VSIntegration.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\ObjectExplorer.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\Ookii.Dialogs.Wpf.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\SQLEditors.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\SqlPackageBase.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\SqlWorkbench.Interfaces.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\System.Management.Automation.dll
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\DbGitAddIn.pkgdef
+C:\Users\SWANG5\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\LabSolvay\DbGitAddIn\1.0\\extension.vsixmanifest
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\DbGitAddIn.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\DbGitAddIn.pdb
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\LibGit2Sharp.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.PowerShell.Commands.Management.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.PowerShell.Commands.Utility.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.PowerShell.ConsoleHost.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.PowerShell.Security.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.SqlServer.Management.Sdk.SqlStudio.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.SqlServer.Management.SqlStudio.Explorer.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.SqlServer.Smo.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Microsoft.SqlServer.SqlTools.VSIntegration.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\ObjectExplorer.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\Ookii.Dialogs.Wpf.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\SQLEditors.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\SqlPackageBase.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\SqlWorkbench.Interfaces.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\System.Management.Automation.dll
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\DbGitAddIn.pkgdef
+C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Extensions\DbGitAddIn\\extension.vsixmanifest
